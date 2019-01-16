@@ -15,3 +15,10 @@ Streaming Input -------------------------------->Prediction --> Results. <br>
 Stage 1: Configuration  --> raw data  Blockchain [0|signature of config] -->[signature of config | sigature of raw data] <br>
 Stage 2: Configuration --> raw data --> clean data --> persisted model  <br>
 Stage 3: Configuration --> persisted model --> ***** <br>
+
+
+## Tutorial
+1. first run main.py uncomment line 23-29 to generate golden model outputs
+2. reverse the comment/uncomment in step 1, rerun it and the blockchain verification will be valid. You'll get a produciton results.
+3. uncomment line 24 and comment 23 to generate random data to demostrate the issue. When code changes, all the pipeline messed up.
+4. Check the ./logs/main.log for verification using blockchain class. You'll see the error message since the data is random during training process. 
