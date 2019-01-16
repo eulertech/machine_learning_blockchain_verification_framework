@@ -8,3 +8,4 @@ def verify_chain(chain1, chain2):
     else:
         status = 1
     return status
+

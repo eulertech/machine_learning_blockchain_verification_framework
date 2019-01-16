@@ -20,20 +20,20 @@ config['DEFAULT'] = {'author': r'liang kuang',
                      'date': str(datetime.datetime.now())
 }
 
-config['Paths'] = {'raw_data_path': r'../data/raw/golden',
-                     'processed_data_path': r'../data/processed/golden',
-                     'test_data_path': r'../data/test/golden',
-                     'model_path': r'../model/model_object/golden',
-                     'metric_path': r'../model/metrics/golden',
-                     'output_path': r'../production/output/golden',
-                     'log_file': r'../logs/golden/main.log'}
-#config['Paths'] = {'raw_data_path': r'../data/raw',
-#                   'processed_data_path': r'../data/processed',
-#                   'test_data_path': r'../data/test',
-#                   'model_path': r'../model/model_object',
-#                   'metric_path': r'../model/metrics',
-#                   'output_path': r'../production/output',
-#                   'log_file': r'../logs/main.log'}
+# config['Paths'] = {'raw_data_path': r'../data/raw/golden',
+#                      'processed_data_path': r'../data/processed/golden',
+#                      'test_data_path': r'../data/test/golden',
+#                      'model_path': r'../model/model_object/golden',
+#                      'metric_path': r'../model/metrics/golden',
+#                      'output_path': r'../production/output/golden',
+#                      'log_file': r'../logs/golden/main.log'}
+config['Paths'] = {'raw_data_path': r'../data/raw',
+                  'processed_data_path': r'../data/processed',
+                  'test_data_path': r'../data/test/golden',
+                  'model_path': r'../model/model_object',
+                  'metric_path': r'../model/metrics',
+                  'output_path': r'../production/output',
+                  'log_file': r'../logs/main.log'}
 
 config['data_generation'] = {}
 config['data_generation']['num_samples'] = '1000'

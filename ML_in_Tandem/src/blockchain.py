@@ -150,8 +150,8 @@ def compare_model_chains(chain1, chain2):
     assert type(chain1) == type(chain2), "The two types are different. Exit(1)"
     len1 = chain1.get_block_length()
     len2 = chain2.get_block_length()
-    last_block1 = chain1.get_last_block()
-    last_block2 = chain2.get_last_block()
+    last_block1 = chain1.get_last_block().hash
+    last_block2 = chain2.get_last_block().hash
 
     if len1 == len2 and last_block1 == last_block2:
         return True
@@ -195,13 +195,15 @@ def build_model_chain(list_of_files):
             if i == 0:
                 index = i
                 timestamp = datetime.datetime.now()
-                data = file_as_bytes(open(list_of_files[i],'rb'))
+                data = file_as_bytes(open(list_of_files[i],'rb')) # it will change image file (png,jpeg etc) data with rb on windows
                 model_chain = create_genesis_block(0, timestamp, data)
+                model_chain.print()
             else:
                 index = i
                 data = file_as_bytes(open(list_of_files[i],'rb'))
                 timestamp = datetime.datetime.now()
                 model_chain = create_next_block(data, model_chain)
+                model_chain.print()
     return model_chain
 # unit test
 

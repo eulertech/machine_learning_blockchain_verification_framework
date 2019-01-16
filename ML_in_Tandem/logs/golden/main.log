@@ -1,13 +1,13 @@
-01142019 09:19:43 main program started.
-01142019 09:19:47 data generation module.
-01142019 09:19:47 liang kuang
-01142019 09:19:47 liang kuang
-01142019 09:19:47 ../data/raw/golden/raw_data.csv
-01142019 09:19:47 ../data/test/golden/test_data.csv
-01142019 09:19:47 data generation is done.
-01142019 09:19:47 data cleaning module.
-01142019 09:19:47 <class 'bool'>
-01142019 09:19:47 Drop features
-01142019 09:19:47 Data cleaning is done.
-01142019 09:19:50 model generation module.
-01142019 09:19:50 model generation is done.
+01162019 02:43:37 main program started.
+01162019 02:43:46 data generation module.
+01162019 02:43:46 liang kuang
+01162019 02:43:46 liang kuang
+01162019 02:43:46 ../data/raw/golden/raw_data.csv
+01162019 02:43:46 ../data/test/golden/test_data.csv
+01162019 02:43:46 data generation is done.
+01162019 02:43:46 data cleaning module.
+01162019 02:43:46 <class 'bool'>
+01162019 02:43:46 Drop features
+01162019 02:43:46 Data cleaning is done.
+01162019 02:43:52 model generation module.
+01162019 02:43:52 model generation is done.
