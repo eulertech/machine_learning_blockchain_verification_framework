@@ -106,15 +106,29 @@ class block():
             previousBlock = previousBlock.previous_block
 
     def save(self, filename):
-        with open(filename, 'w') as f:
-            f.write(self.hash)
+        '''
+        save block chain object to file storage
+        :param filename: the location of file to be saved
+        :return: Nothing
+        '''
+        try:
+            with open(filename, 'w') as f:
+                f.write(self)
+        except IOError:
+            return -1
 
     def load(self, filename):
+        '''
+        Load a saved blockchain object
+        :param filename: The file path of blockchain
+        :return:  the blockchain object
+        '''
         if not os.path.isfile(filename):
             raise IOError(FileNotFoundError)
-        with open(filename, 'r') as f:
-            block = f.read()
-        return block
+        else:
+            with open(filename, 'r') as f:
+                block = f.read()
+            return block
 
 
 def md5sum(filename, blocksize = 65536):
