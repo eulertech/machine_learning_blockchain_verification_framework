@@ -1,4 +1,4 @@
-# ML_in_tandem
+# machine learning pipeline: the challenges and verification with blockchain
 For a typical machine learning development process, it will go through two stages: training and production stages. During the two stages, tangled with various platforms, it will introduce room for errors. Such as mismatch config files, trained model object or test data corruption. This can also happen during file transmission. 
 This code is to demonstrate the typical model train --> production framework and where it can go wrong. Most importantly, how to fix this problem with a block chain process. 
 I have build a block chain class to track the process and a demo included. 
