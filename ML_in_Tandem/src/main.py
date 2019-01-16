@@ -21,9 +21,10 @@ logger.info("main program started.")
 
 import config_init
 import data_generation  # test data is fixed. No randomness
+#import data_generation_random  # test data is fixed. No randomness
 import data_cleaning
 import model_generation
-import production # start production
+#import production # start production
 # after model generation, create a block chain
 
 list_files = ['../Config/config.ini', '../data/raw/raw_data.npy', '../model/model_object/LR.pickle']

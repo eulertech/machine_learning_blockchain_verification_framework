@@ -105,6 +105,18 @@ class block():
             print("The previous block is: %s with index of %d\n"%(previousBlock.hash, previousBlock.index))
             previousBlock = previousBlock.previous_block
 
+    def save_hash(self, filename):
+        '''
+        This only save the hash of last block to text file. readable.
+        :param filename:
+        :return:
+        '''
+        try:
+            with open(filename, 'w') as f:
+                f.write(self.hash)
+        except IOError:
+            return -1
+
     def save(self, filename):
         '''
         save block chain object to file storage
