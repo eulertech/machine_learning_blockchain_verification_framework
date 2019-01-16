@@ -13,6 +13,7 @@ Author: Liang Kuang
 Date: 2019-01-11
 '''
 import os
+import pickle
 import hashlib
 import datetime
 
@@ -117,6 +118,14 @@ class block():
         except IOError:
             return -1
 
+    def load_hash(self, filename):
+        if not os.path.isfile(filename):
+            raise IOError(FileNotFoundError)
+        else:
+            with open(filename, 'r') as f:
+                blockhash = f.readlines()
+            return blockhash
+
     def save(self, filename):
         '''
         save block chain object to file storage
@@ -124,8 +133,8 @@ class block():
         :return: Nothing
         '''
         try:
-            with open(filename, 'w') as f:
-                f.write(self)
+            with open(filename, 'wb') as f:
+                pickle.dump(self, f, pickle.HIGHEST_PROTOCOL)
         except IOError:
             return -1
 
@@ -138,9 +147,9 @@ class block():
         if not os.path.isfile(filename):
             raise IOError(FileNotFoundError)
         else:
-            with open(filename, 'r') as f:
-                block = f.read()
-            return block
+            with open(filename, 'rb') as f:
+                blockObj = pickle.load(f)
+            return blockObj
 
 
 def md5sum(filename, blocksize = 65536):
