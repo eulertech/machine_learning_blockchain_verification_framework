@@ -6,12 +6,12 @@ I have build a block chain class to track the process and a demo included.
 A diagram for typical machine learning model development and deployment:
 
 
-Training data process--
-Training data -> training --> persisted model ~~]]]
-Production
-Streaming Input -------------------------------->Prediction --> Results.
+## Training data process--
+ Training data -> training --> persisted model ~~]]] <br>
+##Production  <br>
+Streaming Input -------------------------------->Prediction --> Results. <br>
 
-Block chain transaction process (like a linked list):
-Stage 1: Configuration  --> raw data  Blockchain [0|signature of config] -->[signature of config | sigature of raw data]
-Stage 2: Configuration --> raw data --> clean data --> persisted model 
-Stage 3: Configuration --> persisted model --> *****
+##Block chain transaction process (like a linked list): <br>
+Stage 1: Configuration  --> raw data  Blockchain [0|signature of config] -->[signature of config | sigature of raw data] <br>
+Stage 2: Configuration --> raw data --> clean data --> persisted model  <br>
+Stage 3: Configuration --> persisted model --> ***** <br>
