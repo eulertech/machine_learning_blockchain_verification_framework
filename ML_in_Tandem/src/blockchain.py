@@ -118,14 +118,6 @@ class block():
         except IOError:
             return -1
 
-    def load_hash(self, filename):
-        if not os.path.isfile(filename):
-            raise IOError(FileNotFoundError)
-        else:
-            with open(filename, 'r') as f:
-                blockhash = f.readlines()
-            return blockhash
-
     def save(self, filename):
         '''
         save block chain object to file storage
@@ -138,18 +130,26 @@ class block():
         except IOError:
             return -1
 
-    def load(self, filename):
-        '''
-        Load a saved blockchain object
-        :param filename: The file path of blockchain
-        :return:  the blockchain object
-        '''
-        if not os.path.isfile(filename):
-            raise IOError(FileNotFoundError)
-        else:
-            with open(filename, 'rb') as f:
-                blockObj = pickle.load(f)
-            return blockObj
+def load(filename):
+    '''
+    Load a saved blockchain object
+    :param filename: The file path of blockchain
+    :return:  the blockchain object
+    '''
+    if not os.path.isfile(filename):
+        raise IOError(FileNotFoundError)
+    else:
+        with open(filename, 'rb') as f:
+            blockObj = pickle.load(f)
+        return blockObj
+
+def load_hash(filename):
+    if not os.path.isfile(filename):
+        raise IOError(FileNotFoundError)
+    else:
+        with open(filename, 'r') as f:
+            blockhash = f.readlines()
+        return blockhash
 
 
 def md5sum(filename, blocksize = 65536):
@@ -202,8 +202,8 @@ def compare_nth_block(chain1, chain2, n):
     '''
     # compare the nth block starting from parent
     assert type(chain1) == type(chain2), "The two types are different. Exit(1)"
-    n_block1 = chain1.get_nth_block(n)
-    n_block2 = chain2.get_nth_block(n)
+    n_block1 = chain1.get_nth_block(n).hash
+    n_block2 = chain2.get_nth_block(n).hash
     if n_block1 == n_block2:
         return True
     else:
